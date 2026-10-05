@@ -1,5 +1,8 @@
 # Site Guardian
 
+[![Tests](https://github.com/jonnipm-web/site-guardian/actions/workflows/tests.yml/badge.svg)](https://github.com/jonnipm-web/site-guardian/actions/workflows/tests.yml)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+
 Browser-native site and brand design-system compliance auditing for any public website.
 
 Site Guardian is an open-source, portfolio-ready reference implementation created and maintained by **InsightValues**. InsightValues is the first case study; the engine is deliberately neutral so another team can provide its own brand/site standard.
@@ -17,6 +20,20 @@ The architecture has three pillars:
 - **Automation** — deterministic discovery, browser evidence collection, delta detection, daily health checks, and machine-readable manifests.
 - **Monetization** — open-source core with configurable profiles, hosted/team execution, policy packs, and commercial reporting extensions kept outside the read-only core.
 - **Security** — read-only by design, no credentials in profiles or reports, fail-closed P0/P1 gates, independent verification, and corrections kept outside the auditor.
+
+## Architecture at a glance
+
+```mermaid
+flowchart LR
+    A[Native browser adapter] --> B[Evidence packet]
+    B --> C[Deterministic engine]
+    P[Versioned site profile] --> C
+    C --> D[Manifest and gate]
+    D --> E[Human review]
+    E -. authorized correction outside auditor .-> F[Target site]
+```
+
+The auditor reads evidence and produces a manifest. It does not log in, edit content, submit forms, or apply corrections.
 
 ## Modes
 
