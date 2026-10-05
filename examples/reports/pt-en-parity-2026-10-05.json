@@ -1,0 +1,46 @@
+{
+  "project": "IV-SITE-GUARDIAN-01",
+  "standard": "INSIGHTVALUES_SITE_STANDARD",
+  "canonical_locale": "pt-BR",
+  "comparison": {
+    "pt_route": "/inteligencia/",
+    "en_route": "/en/intelligence/",
+    "status": "PASS_CONTENT_FRAME__MACRO_NOT_CLOSED",
+    "severity": "P1"
+  },
+  "evidence": [
+    "PT was treated as the canonical pattern and inspected read-only before the EN remediation.",
+    "The public EN DOM now exposes the same page hierarchy: lead, What is Intelligence, What we publish, four category cards, Publications, and ten article entries.",
+    "The public EN page renders real HTML rather than escaped markup, uses the dark InsightValues theme, exposes a three-column category grid, and has no visible sidebar widgets, matching the observed PT shell.",
+    "The public EN DOM no longer exposes a duplicate automatic page-title heading.",
+    "The shared header, language switcher, and footer remain present after publication."
+  ],
+    "interpretation": "The EN Intelligence page now uses the PT canonical DOM/template and matches the PT visible content frame and computed design tokens for the verified desktop scope. The outer WordPress theme container still differs (EN 1200px/0px horizontal padding versus PT 1180px/40px padding), so exact full-page parity is not declared closed.",
+  "action": "EN-only remediation completed with backup and public native-browser DOM/AX revalidation. PT was not edited or saved.",
+  "backup": {
+    "provider": "UpdraftPlus",
+    "status": "SUCCESS",
+    "timestamp_observed": "2026-10-05 13:01:17",
+    "scope": "database and files",
+    "remote_upload": false
+  },
+  "verified": {
+    "scope": "EN Intelligence page only",
+    "canonical_source": "https://insightvalues.com/inteligencia/",
+    "target": "https://insightvalues.com/en/intelligence/",
+    "pt_unchanged_control": "PASS_CONTROLADO",
+    "section_parity": "PASS",
+    "category_card_parity": "PASS",
+    "article_count_and_order": "PASS",
+    "sidebar_parity": "PASS",
+    "raw_markup_exposure": "PASS",
+    "computed_theme_and_grid": "PASS_CONTENT_FRAME",
+    "duplicate_title": "PASS",
+    "shared_shell": "PASS",
+    "seo_head": "NOT_VERIFIED",
+    "responsive_matrix": "NOT_VERIFIED",
+    "adsense_and_ads": "NOT_VERIFIED",
+    "full_site_coverage": "NOT_VERIFIED",
+    "exact_outer_theme_container_parity": "NOT_VERIFIED_RESIDUAL_LEGACY_EN_CSS"
+  }
+}

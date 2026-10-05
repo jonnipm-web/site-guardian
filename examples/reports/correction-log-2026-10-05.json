@@ -1,0 +1,48 @@
+{
+  "project": "IV-SITE-GUARDIAN-01",
+  "timestamp": "2026-10-05",
+  "mode": "reversion-of-incorrect-remediation",
+  "backup": {
+    "provider": "UpdraftPlus",
+    "status": "SUCCESS",
+    "scope": "database + files",
+    "destination": "local WordPress backup storage",
+    "remote_upload": false
+  },
+  "changes": [
+    {
+      "post_id": 508,
+      "route": "/en/about/",
+      "change": "First content heading InsightValues: H1 -> H2 (restored)",
+      "published": true,
+      "verified_publicly": true,
+      "verification": "Native browser exposed heading InsightValues, level 2; existing content, navigation, and footer remained unchanged."
+    },
+    {
+      "post_id": 535,
+      "route": "/en/contact/",
+      "change": "First content heading Talk to InsightValues: H1 -> H2 (restored)",
+      "published": true,
+      "verified_publicly": true,
+      "verification": "Native browser exposed heading Talk to InsightValues, level 2; form fields and Send message control remained present."
+    },
+    {
+      "post_id": 474,
+      "route": "/en/",
+      "change": "First content heading Intelligence → Decision → Execution: H1 -> H2 (restored)",
+      "published": true,
+      "verified_publicly": true,
+      "verification": "Native browser exposed the first content heading at level 2; the existing institutional/ecosystem content remained unchanged."
+    }
+  ],
+  "not_changed": [
+    "CSS inline blocks",
+    "editorial text",
+    "forms and submissions",
+    "navigation and locale routes",
+    "SEO metadata",
+    "other pages not directly verified in this run"
+  ],
+  "remaining_gate": "NOT_VERIFIED_FOR_FULL_SITE",
+  "reason": "The earlier H1 changes were an incorrect interpretation of the site's existing structure. They were reversed and no new page design or template was applied."
+}

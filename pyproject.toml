@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "site-guardian"
+version = "0.1.0"
+description = "Browser-native site and brand compliance auditing"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+
+[project.scripts]
+site-guardian = "guardian.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

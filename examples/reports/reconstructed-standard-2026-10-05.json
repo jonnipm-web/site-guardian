@@ -1,0 +1,45 @@
+{
+  "project": "IV-SITE-GUARDIAN-01",
+  "standard": "INSIGHTVALUES_SITE_STANDARD",
+  "version": "0.2.0",
+  "mode": "browser-native-read-only-reconstruction",
+  "pillars": {
+    "automation": "DOM/accessibility/metadata/computed-style evidence and deterministic manifests; screenshots are optional evidence only",
+    "monetization": "institutional/product conversion, SEO, AdSense and editorial boundaries remain configurable and truth-preserving",
+    "security": "read-only audit, fail-closed P0/P1 gaps, backup and independent revalidation before corrections"
+  },
+  "evidence_routes": [
+    "/en/",
+    "/en/intelligence/",
+    "/en/ecosystem/",
+    "/en/ive-2/",
+    "/en/about/",
+    "/en/contact/"
+  ],
+  "reconstructed_families": {
+    "institutional_product": ["/en/", "/en/about/", "/en/contact/", "/en/ecosystem/", "/en/ive-2/"],
+    "editorial_hub": ["/en/intelligence/"]
+  },
+  "confirmed_shell": [
+    "InsightValues masthead linked to locale home",
+    "shared EN primary navigation and Ecosystem submenu",
+    "shared legal/footer navigation",
+    "shared footer identity and copyright pattern",
+    "locale links are route-paired per page"
+  ],
+  "confirmed_page_patterns": [
+    "institutional/product pages use proposition, explanatory sections, product truth/status, CTAs and shared footer",
+    "Intelligence uses an editorial hub with categorized article entries",
+    "heading levels are template/page-family specific and must not be globally normalized"
+  ],
+  "not_verified": [
+    "computed typography tokens",
+    "computed colors and contrast",
+    "exact geometry and responsive breakpoints",
+    "canonical/hreflang/indexability metadata",
+    "AdSense eligibility and placement",
+    "full URL inventory and link status",
+    "form submission behavior"
+  ],
+  "change_authorization": "No website content, CSS, SEO, navigation, form, or template was changed during this reconstruction."
+}

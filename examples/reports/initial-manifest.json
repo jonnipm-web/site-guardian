@@ -1,0 +1,145 @@
+{
+  "manifest": "site-guardian/manifest-v1",
+  "generated_at": "2026-10-05T10:07:14.125655+00:00",
+  "mode": "full",
+  "profile_id": "insightvalues-case-study",
+  "standard": {
+    "id": "INSIGHTVALUES_SITE_STANDARD",
+    "version": "0.1.0",
+    "source_policy": "observed-only"
+  },
+  "source": "native-browser",
+  "scope": {
+    "urls_requested": 1,
+    "urls_observed": 1,
+    "urls_blocked": 0,
+    "url": "https://insightvalues.com/en/intelligence/",
+    "captured_at": "2026-10-05T09:31:58Z",
+    "executor": "codex-chrome-extension"
+  },
+  "gate": "FAIL",
+  "results": [
+    {
+      "rule_id": "IVSG-INV-001",
+      "layer": "inventory",
+      "severity": "P1",
+      "status": "WARN",
+      "evidence_refs": [],
+      "notes": "Only the live Intelligence page was collected in this initial evidence packet; full EN inventory is pending adapter traversal."
+    },
+    {
+      "rule_id": "IVSG-I18N-001",
+      "layer": "i18n",
+      "severity": "P1",
+      "status": "WARN",
+      "evidence_refs": [
+        "ax:22",
+        "ax:23"
+      ],
+      "notes": "Both Português and English links are visible; route-pair completeness was not established."
+    },
+    {
+      "rule_id": "IVSG-BRAND-001",
+      "layer": "brand",
+      "severity": "P2",
+      "status": "PASS",
+      "evidence_refs": [
+        "ax:3",
+        "ax:26",
+        "ax:78"
+      ],
+      "notes": "InsightValues identity is visible in the masthead, content label, footer heading, and footer text."
+    },
+    {
+      "rule_id": "IVSG-TYPE-001",
+      "layer": "typography",
+      "severity": "P2",
+      "status": "NOT_VERIFIED",
+      "evidence_refs": [],
+      "notes": "No executable result supplied by adapter."
+    },
+    {
+      "rule_id": "IVSG-COLOR-001",
+      "layer": "brand",
+      "severity": "P2",
+      "status": "NOT_VERIFIED",
+      "evidence_refs": [],
+      "notes": "No executable result supplied by adapter."
+    },
+    {
+      "rule_id": "IVSG-LAYOUT-001",
+      "layer": "layout",
+      "severity": "P2",
+      "status": "NOT_VERIFIED",
+      "evidence_refs": [],
+      "notes": "No executable result supplied by adapter."
+    },
+    {
+      "rule_id": "IVSG-SEO-001",
+      "layer": "seo",
+      "severity": "P1",
+      "status": "NOT_VERIFIED",
+      "evidence_refs": [],
+      "notes": "Current browser evidence did not expose head metadata."
+    },
+    {
+      "rule_id": "IVSG-A11Y-001",
+      "layer": "accessibility",
+      "severity": "P2",
+      "status": "WARN",
+      "evidence_refs": [
+        "ax:1",
+        "ax:27",
+        "ax:32",
+        "ax:37",
+        "ax:40",
+        "ax:70"
+      ],
+      "notes": "Accessibility tree exposes skip link, landmarks/containers, heading hierarchy, and link names; contrast/focus/labels remain unverified."
+    },
+    {
+      "rule_id": "IVSG-LINK-001",
+      "layer": "links",
+      "severity": "P1",
+      "status": "WARN",
+      "evidence_refs": [
+        "ax:41",
+        "ax:43",
+        "ax:47",
+        "ax:49",
+        "ax:53",
+        "ax:56",
+        "ax:59",
+        "ax:62",
+        "ax:65",
+        "ax:68",
+        "ax:72",
+        "ax:73",
+        "ax:74",
+        "ax:75"
+      ],
+      "notes": "Link destinations were observed in DOM but not independently fetched for status in this packet."
+    },
+    {
+      "rule_id": "IVSG-TRUTH-001",
+      "layer": "product-truth",
+      "severity": "P1",
+      "status": "NOT_VERIFIED",
+      "evidence_refs": [],
+      "notes": "No executable result supplied by adapter."
+    }
+  ],
+  "unverified_rule_count": 5,
+  "observed_rule_ids": [
+    "IVSG-A11Y-001",
+    "IVSG-BRAND-001",
+    "IVSG-COLOR-001",
+    "IVSG-I18N-001",
+    "IVSG-INV-001",
+    "IVSG-LAYOUT-001",
+    "IVSG-LINK-001",
+    "IVSG-SEO-001",
+    "IVSG-TRUTH-001",
+    "IVSG-TYPE-001"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Site Guardian profile",
+  "type": "object",
+  "required": ["schema_version", "profile_id", "site", "standard", "inventory", "rules"],
+  "properties": {
+    "schema_version": {"const": "site-guardian/profile-v1"},
+    "profile_id": {"type": "string"},
+    "site": {"type": "object", "required": ["origin", "locales"], "properties": {"origin": {"type": "string", "format": "uri"}, "locales": {"type": "array", "items": {"type": "string"}}}},
+    "standard": {"type": "object", "required": ["id", "version"], "properties": {"id": {"type": "string"}, "version": {"type": "string"}, "source_policy": {"enum": ["observed-only", "approved-tokens"]}}},
+    "inventory": {"type": "object", "required": ["seeds"], "properties": {"seeds": {"type": "array", "items": {"type": "string", "format": "uri"}}, "sitemap_urls": {"type": "array", "items": {"type": "string", "format": "uri"}}, "include_patterns": {"type": "array", "items": {"type": "string"}}}},
+    "responsive_states": {"type": "array", "items": {"type": "object", "required": ["id", "width", "height"]}},
+    "rules": {"type": "array", "items": {"$ref": "#/$defs/rule"}}
+  },
+  "$defs": {"rule": {"type": "object", "required": ["id", "layer", "severity", "status_when_unavailable"], "properties": {"id": {"type": "string", "pattern": "^IVSG-[A-Z0-9-]+$"}, "layer": {"type": "string"}, "severity": {"enum": ["P0", "P1", "P2", "P3"]}, "status_when_unavailable": {"const": "NOT_VERIFIED"}, "selector": {"type": "string"}, "property": {"type": "string"}, "expected": {}, "tolerance": {}, "notes": {"type": "string"}}}}
+}

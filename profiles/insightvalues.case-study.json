@@ -1,0 +1,25 @@
+{
+  "schema_version": "site-guardian/profile-v1",
+  "profile_id": "insightvalues-case-study",
+  "site": {"origin": "https://insightvalues.com", "locales": ["pt-BR", "en"], "canonical_locale": "pt-BR"},
+  "standard": {"id": "INSIGHTVALUES_SITE_STANDARD", "version": "0.3.0", "source_policy": "observed-only"},
+  "inventory": {"seeds": ["https://insightvalues.com/en/", "https://insightvalues.com/en/intelligence/", "https://insightvalues.com/inteligencia/"], "sitemap_urls": ["https://insightvalues.com/sitemap_index.xml", "https://insightvalues.com/wp-sitemap.xml"], "include_patterns": ["https://insightvalues.com/en/**", "https://insightvalues.com/inteligencia**", "https://insightvalues.com/en/artificial-intelligence/**"]},
+  "responsive_states": [{"id": "mobile-360", "width": 360, "height": 800}, {"id": "mobile-390", "width": 390, "height": 844}, {"id": "mobile-412", "width": 412, "height": 915}, {"id": "desktop-1440", "width": 1440, "height": 900}],
+  "rules": [
+    {"id": "IVSG-INV-001", "layer": "inventory", "severity": "P1", "status_when_unavailable": "NOT_VERIFIED", "notes": "Every in-scope URL must be collected or explicitly reported as blocked."},
+    {"id": "IVSG-I18N-001", "layer": "i18n", "severity": "P1", "status_when_unavailable": "NOT_VERIFIED", "notes": "EN/PT route pairs and language attributes must be consistent."},
+    {"id": "IVSG-I18N-002", "layer": "i18n-parity", "severity": "P1", "status_when_unavailable": "NOT_VERIFIED", "notes": "PT-BR is canonical. EN must preserve PT page family, section order, components, CTAs, product truth, footer/legal blocks, and SEO role; translation alone does not establish parity."},
+    {"id": "IVSG-CONTENT-001", "layer": "content-language", "severity": "P1", "status_when_unavailable": "NOT_VERIFIED", "required_evidence": ["content_language_review", "grammar_review", "route_locale_review"], "notes": "EN must be grammatically reviewed, free of accidental PT content/URLs, and aligned to the PT canonical page purpose; content similarity alone is insufficient."},
+    {"id": "IVSG-VISUAL-001", "layer": "visual-standard", "severity": "P1", "status_when_unavailable": "NOT_VERIFIED", "required_evidence": ["computed_theme_tokens", "computed_typography_tokens", "computed_color_tokens", "computed_geometry_tokens", "visual_reference_comparison"], "notes": "PT and EN require observed browser computed-style and geometry parity. A screenshot may support context but cannot replace DOM/CSS evidence."},
+    {"id": "IVSG-COMPONENT-001", "layer": "component-structure", "severity": "P1", "status_when_unavailable": "NOT_VERIFIED", "required_evidence": ["component_inventory_pt", "component_inventory_en", "component_parity_comparison"], "notes": "Cards, grids, containers, header, footer, sidebar state, and page-family components must be inventoried and compared explicitly."},
+    {"id": "IVSG-RESPONSIVE-001", "layer": "responsive", "severity": "P1", "status_when_unavailable": "NOT_VERIFIED", "required_evidence": ["responsive_states_observed"], "notes": "Required viewport states must be observed on both canonical PT and target EN pages; unavailable states fail closed."},
+    {"id": "IVSG-BRAND-001", "layer": "brand", "severity": "P2", "status_when_unavailable": "NOT_VERIFIED", "notes": "Logo/name identity must match the approved observed standard."},
+    {"id": "IVSG-TYPE-001", "layer": "typography", "severity": "P2", "status_when_unavailable": "NOT_VERIFIED", "required_evidence": ["computed_typography_tokens"], "notes": "Do not infer font family, size, weight, or line height."},
+    {"id": "IVSG-COLOR-001", "layer": "brand", "severity": "P2", "status_when_unavailable": "NOT_VERIFIED", "required_evidence": ["computed_color_tokens"], "notes": "Computed colors and contrast require browser evidence."},
+    {"id": "IVSG-LAYOUT-001", "layer": "layout", "severity": "P2", "status_when_unavailable": "NOT_VERIFIED", "required_evidence": ["computed_geometry_tokens"], "notes": "Container, spacing, overflow, and alignment require computed geometry."},
+    {"id": "IVSG-SEO-001", "layer": "seo", "severity": "P1", "status_when_unavailable": "NOT_VERIFIED", "notes": "Canonical, hreflang, title, description, and indexability must be observed."},
+    {"id": "IVSG-A11Y-001", "layer": "accessibility", "severity": "P2", "status_when_unavailable": "NOT_VERIFIED", "notes": "Headings, labels, alt text, landmarks, contrast, and focus are audited from evidence; heading levels are evaluated against the page-family template, not globally normalized."},
+    {"id": "IVSG-LINK-001", "layer": "links", "severity": "P1", "status_when_unavailable": "NOT_VERIFIED", "notes": "Internal, legal, language, and external links must be checked read-only."},
+    {"id": "IVSG-TRUTH-001", "layer": "product-truth", "severity": "P1", "status_when_unavailable": "NOT_VERIFIED", "notes": "Product status claims are profile-configured and never inferred from user text."}
+  ]
+}

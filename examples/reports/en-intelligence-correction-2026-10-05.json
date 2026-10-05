@@ -1,0 +1,61 @@
+{
+  "report_id": "IVSG-EN-INTELLIGENCE-CORRECTION-2026-10-05",
+  "project": "IV-SITE-GUARDIAN-01",
+  "status": "PASS_PAGE_PARITY__MACRO_NOT_CLOSED",
+  "scope": "Only the EN Intelligence page was remediated. The PT canonical page was read-only and was not edited or saved.",
+  "canonical": {
+    "locale": "pt-BR",
+    "url": "https://insightvalues.com/inteligencia/",
+    "wordpress_post_id": 449
+  },
+  "target": {
+    "locale": "en-US",
+    "url": "https://insightvalues.com/en/intelligence/",
+    "wordpress_post_id": 517
+  },
+  "backup": {
+    "provider": "UpdraftPlus",
+    "status": "SUCCESS",
+    "timestamp_observed": "2026-10-05 13:01:17",
+    "scope": "database and files",
+    "remote_upload": false
+  },
+  "changes": [
+    {
+      "rule_id": "IVSG-I18N-002",
+      "severity": "P1",
+      "action": "Rebuilt EN content by duplicating the PT canonical DOM/template and translating only the content, preserving the PT hierarchy and English copy."
+    },
+    {
+      "rule_id": "IVSG-LAYOUT-001",
+      "severity": "P1",
+      "action": "Aligned the EN visible content frame to the PT computed frame: same 1132px visual frame, 900px section, 276px cards, and matching typography tokens. The legacy EN outer theme container remains 1200px versus PT 1180px and is recorded as residual, not hidden."
+    },
+    {
+      "rule_id": "IVSG-LAYOUT-002",
+      "severity": "P1",
+      "action": "Preserved the EN content structure without a duplicate automatic page title."
+    }
+  ],
+  "public_native_browser_verification": {
+    "dom_ax_structure": "PASS",
+    "lead_and_heading_hierarchy": "PASS",
+    "four_category_cards": "PASS",
+    "ten_publications": "PASS",
+    "no_right_sidebar": "PASS",
+    "computed_theme_and_grid": "PASS_CONTENT_FRAME",
+    "raw_markup_exposure": "PASS",
+    "no_duplicate_automatic_title": "PASS",
+    "header_language_switcher_footer": "PASS",
+    "pt_unchanged_control": "PASS_CONTROLADO",
+    "exact_outer_theme_container_parity": "NOT_VERIFIED_RESIDUAL_LEGACY_EN_CSS"
+  },
+  "not_verified_in_this_run": [
+    "Computed CSS token-by-token parity for every breakpoint",
+    "SEO head metadata, canonical, hreflang, and indexability",
+    "Responsive matrix across all required viewport widths",
+    "AdSense and advertising behavior",
+    "Complete site-wide EN URL inventory"
+  ],
+  "policy": "Site Guardian remains read-only. This report records an explicitly authorized EN remediation performed outside the auditor, followed by public revalidation. No GitHub publication was performed. PT post 449 was not edited or saved. Macro readiness is not claimed while residual outer-container parity, responsive, SEO, i18n route inventory, accessibility, monetization, and security checks remain open."
+}

@@ -1,0 +1,18 @@
+{
+  "report_id": "IVSG-INITIAL-2026-10-05-EN-INTELLIGENCE",
+  "project": "IV-SITE-GUARDIAN-01",
+  "status": "PARTIAL_NOT_VERIFIED",
+  "gate": "FAIL_CLOSED_UNVERIFIED_SCOPE",
+  "scope": {"site": "https://insightvalues.com", "focus": "EN", "completed_urls": ["https://insightvalues.com/en/intelligence/"], "not_completed": "All EN pages; sitemap XML was blocked by the browser client, so no claim of complete inventory is made."},
+  "observed_findings": [
+    {"id": "IVSG-F-001", "severity": "P2", "status": "OBSERVED", "title": "Visible page uses a coherent InsightValues identity", "evidence": "Masthead link, content label, footer heading, and ecosystem statement all expose InsightValues/IVE identity."},
+    {"id": "IVSG-F-002", "severity": "P2", "status": "OBSERVED", "title": "Navigation exposes PT/EN language links", "evidence": "Primary navigation exposes Português → /inteligencia/ and English → /en/intelligence/. Pair completeness not verified."},
+    {"id": "IVSG-F-003", "severity": "P2", "status": "REVIEW_REQUIRED", "title": "Article navigation includes a mixed-locale route", "evidence": "The EN Intelligence listing contains a Building IVE article linking to /inteligencia-artificial/building-ive-google-adk-gemini/; locale policy must decide whether this is intentional."},
+    {"id": "IVSG-F-004", "severity": "P1", "status": "NOT_VERIFIED", "title": "Full EN inventory and link health remain unverified", "evidence": "Native browser XML navigation was blocked; one page cannot prove complete URL coverage or all persistent defects."},
+    {"id": "IVSG-F-005", "severity": "P2", "status": "REVIEW_REQUIRED", "title": "Top-level heading structure is not uniform across inspected EN pages", "evidence": "Native accessibility trees exposed an H2 page title on /en/, /en/about/, and /en/contact/, while /en/ecosystem/ and /en/ive-2/ exposed H1 page titles. Confirm against DOM heading markup and the approved semantic standard."},
+    {"id": "IVSG-F-006", "severity": "P2", "status": "REVIEW_REQUIRED", "title": "Locale route patterns vary across inspected EN pages", "evidence": "Observed PT links include /, /ecossistema/, /ive/, /quem-somos/, /contato/, and /inteligencia/; confirm these are intentional canonical pairs and that hreflang is consistent."},
+    {"id": "IVSG-F-007", "severity": "P2", "status": "OBSERVED", "title": "Shared footer/legal topology persisted across inspected EN pages", "evidence": "All five inspected EN pages exposed Privacy Policy, Terms of Use, Cookie Policy, Comments Policy, About/Explore footer structure, and © 2026 InsightValues."}
+  ],
+  "unverified": ["computed typography", "computed colors and contrast", "spacing and layout geometry", "responsive 360/390/412/1440 states", "head metadata/canonical/hreflang/indexability", "all EN URLs", "HTTP link status", "forms and focus", "product-truth claims"],
+  "next_execution": "Run the adapter against the profile with sitemap access or a supplied approved URL inventory; retain this packet as the baseline evidence, not as a complete production audit."
+}
