@@ -6,7 +6,7 @@ This is the first reconstructed standard for the InsightValues case study. The P
 
 ### 1. Automation
 
-The Guardian discovers URLs, opens the live page in the executor's native browser, collects DOM/accessibility/metadata/computed-style evidence, runs deterministic checks, and emits a versioned manifest. Screenshots are optional evidence only; they are not the audit mechanism.
+Site Guardian discovers URLs, opens the live page in the executor's native browser, collects DOM/accessibility/metadata/computed-style evidence, runs deterministic checks, and emits a versioned manifest. Screenshots are optional evidence only; they are not the audit mechanism.
 
 ### 2. Monetização
 

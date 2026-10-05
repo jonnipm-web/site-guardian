@@ -6,7 +6,7 @@ Site Guardian is an open-source, portfolio-ready reference implementation create
 
 ## What it does
 
-The Guardian audits a live page as:
+Site Guardian audits a live page as:
 
 `URL → page → section → component → element → property → rule`
 
